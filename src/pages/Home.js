@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import ReactGA from "react-ga";
 import { useLocation } from "react-router-dom";
+import useGO from "../hooks/useGO";
 import style from "./Home.module.css";
 
 const Home = () => {
+  const variant = useGO("YOUR_EXPERIMENT_ID_GOES_HERE");
   const location = useLocation();
-  useEffect(() => {
-    ReactGA.initialize("G-YQM0DZ78VN");
-  }, []);
 
   useEffect(() => {
     ReactGA.set({ page: location.pathname });
