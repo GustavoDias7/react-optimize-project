@@ -5,7 +5,7 @@ import useGO from "../hooks/useGO";
 import style from "./Home.module.css";
 
 const Home = () => {
-  const variant = useGO("YOUR_EXPERIMENT_ID_GOES_HERE");
+  const variant = useGO();
   const location = useLocation();
 
   useEffect(() => {
