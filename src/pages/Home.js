@@ -9,7 +9,7 @@ const Home = () => {
   const location = useLocation();
 
   useEffect(() => {
-    ReactGA.set({ page: location.pathname });
+    console.log({ location: location });
     ReactGA.pageview(location.pathname);
   }, [location]);
 
