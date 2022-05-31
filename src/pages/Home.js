@@ -18,6 +18,8 @@ const Home = () => {
     ReactGA.pageview(location.pathname);
   }, [location]);
 
+  console.log({ variant });
+
   return (
     <div className={style.wrapper}>
       <h2>A/B Test</h2>
