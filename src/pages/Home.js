@@ -10,6 +10,11 @@ const Home = () => {
 
   useEffect(() => {
     console.log({ location: location });
+    if (!window.GA_INITIALIZED) {
+      ReactGA.initialize("UA-000000-01");
+      window.GA_INITIALIZED = true;
+    }
+    ReactGA.set({ page: location.pathname });
     ReactGA.pageview(location.pathname);
   }, [location]);
 
