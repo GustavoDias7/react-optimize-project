@@ -5,7 +5,7 @@ import useGO from "../hooks/useGO";
 import style from "./Home.module.css";
 
 const Home = () => {
-  const variant = useGO();
+  // const variant = useGO();
   const location = useLocation();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Home = () => {
     ReactGA.pageview(location.pathname);
   }, [location]);
 
-  console.log({ variant });
+  // console.log({ variant });
 
   return (
     <div className={style.wrapper}>
