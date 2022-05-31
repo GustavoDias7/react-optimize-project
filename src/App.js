@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import ReactGA from "react-ga";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import { root, testB } from "./utils/links";
