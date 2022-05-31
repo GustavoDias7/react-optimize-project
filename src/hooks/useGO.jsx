@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-const experimentId = "W_kNR4FjSZaUnFDp3MfJ-g";
+const experimentId = "3Ikx7bjQRqSWumukrMEqAA";
 
 const useGO = () => {
   const [variant, setVariant] = useState();
