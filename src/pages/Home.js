@@ -22,7 +22,7 @@ const Home = () => {
     <div className={style.wrapper}>
       <h2>A/B Test</h2>
       <br />
-      <h2>{variant ? variant : "Test Unavalible"}</h2>
+      <h2>Variant: {variant}</h2>
     </div>
   );
 };
