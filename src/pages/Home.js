@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import ReactGA from "react-ga";
 import { useLocation } from "react-router-dom";
-import useGO from "../hooks/useGO";
+import useExperiment from "../hooks/useExperiment";
 import style from "./Home.module.css";
 
 const Home = () => {
-  // const variant = useGO();
+  const variant = useExperiment();
   const location = useLocation();
 
   useEffect(() => {
+    console.log("Home variant", variant);
     if (!window.GA_INITIALIZED) {
       ReactGA.initialize("UA-230277864-1");
       window.GA_INITIALIZED = true;
@@ -20,6 +21,8 @@ const Home = () => {
   return (
     <div className={style.wrapper}>
       <h2>A/B Test</h2>
+      <br />
+      <h2>{variant ? "Test B" : "Test A"}</h2>
     </div>
   );
 };

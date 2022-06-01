@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-const experimentId = process.env.REACT_APP_EXPERIMENTID;
+const experimentId = "ZulQqnrSRlOQZkmAEff5HQ";
 
-const useGO = () => {
+const useExperiment = () => {
   const [variant, setVariant] = useState();
   useEffect(() => {
     (async () => {
@@ -17,8 +17,9 @@ const useGO = () => {
       }, 100);
     })();
   });
-  console.log({ variant });
+
+  console.log("useExperiment variant", variant);
   return variant;
 };
 
-export default useGO;
+export default useExperiment;
