@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ReactGA from "react-ga";
 import { useLocation } from "react-router-dom";
-import useExperiment from "../hooks/useExperiment";
+import useExperiment from "../hooks/useExpirimente";
 import style from "./Home.module.css";
 
 const Home = () => {
