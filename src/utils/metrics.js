@@ -1,13 +1,13 @@
 import TagManager from "react-gtm-module";
 import ReactGA from "react-ga";
 
-const TRACKING_ID = "UA-230277864-1";
-
 export function initGTM() {
   TagManager.initialize({
-    gtmId: TRACKING_ID,
+    gtmId: "GTM-TH4SQLJ",
   });
 }
+
+const TRACKING_ID = "UA-230277864-1";
 
 export function initGA() {
   ReactGA.initialize(TRACKING_ID, {
