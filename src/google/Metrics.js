@@ -1,10 +1,17 @@
 import React, { useEffect } from "react";
-import { initGA, initGTM } from "../utils/metrics";
+import {
+  initGA,
+  initGTM,
+  setGADatalayer,
+  setGTMDatalayer,
+} from "../utils/metrics";
 
 const Metrics = () => {
   useEffect(() => {
     initGA();
     initGTM();
+    setGTMDatalayer();
+    setGADatalayer();
   }, []);
 
   return <div>Metrics</div>;
