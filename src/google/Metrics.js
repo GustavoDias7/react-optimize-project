@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
-import {
-  initGA,
-  initGTM,
-  setGADatalayer,
-  setGTMDatalayer,
-} from "../utils/metrics";
+import { useLocation } from "react-router-dom";
+import { init, sendPageview, setDatalayer } from "../utils/metrics";
 
 const Metrics = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    initGA();
-    initGTM();
-    setGTMDatalayer();
-    setGADatalayer();
+    init();
+    setDatalayer();
   }, []);
+
+  useEffect(() => {
+    sendPageview();
+  }, [location]);
 
   return <div>Metrics</div>;
 };

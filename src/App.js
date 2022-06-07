@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Metrics from "./google/Metrics";
 import Home from "./pages/Home";
 import Page1 from "./pages/Page1";
 import Page2 from "./pages/Page2";
