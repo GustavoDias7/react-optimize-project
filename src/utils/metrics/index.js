@@ -35,12 +35,18 @@ function getLocation() {
   return window.location.pathname + window.location.search;
 }
 
-export function setDatalayer() {
+export function handleDatalayer() {
   // window.dataLayer.push({
   //   user_id: 123,
   //   event: "gtm.js",
   //   test: "testDataLayer"
   // });
+  // window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "virtualPageview",
+    pageUrl: getLocation(),
+    pageTitle: "Page " + getLocation(),
+  });
   TagManager.dataLayer(tagManagerArgs);
 }
 
