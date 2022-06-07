@@ -62,3 +62,7 @@ export function sendPageview() {
     action: "Move to " + getLocation(),
   });
 }
+
+export function removeDataLayer() {
+  window.dataLayer = [];
+}
