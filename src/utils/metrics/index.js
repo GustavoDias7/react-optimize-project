@@ -41,7 +41,7 @@ export function handleDatalayer() {
   //   event: "gtm.js",
   //   test: "testDataLayer"
   // });
-  // window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: "virtualPageview",
     pageUrl: getLocation(),
