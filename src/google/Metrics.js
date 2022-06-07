@@ -12,6 +12,7 @@ const Metrics = () => {
 
   useEffect(() => {
     sendPageview();
+    console.log("useLocation:", location);
   }, [location]);
 
   return <div>Metrics</div>;
