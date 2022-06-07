@@ -31,6 +31,19 @@ function getLocation() {
   return window.location.pathname + window.location.search;
 }
 
+export function setDatalayer() {
+  // window.dataLayer.push({
+  //   user_id: 123,
+  //   event: "gtm.js",
+  //   test: "testDataLayer"
+  // });
+  TagManager.dataLayer(tagManagerArgs);
+}
+
+export function sendEvent(payload) {
+  ReactGA.event(payload);
+}
+
 export function sendPageview() {
   ReactGA.set({ page: getLocation() });
   ReactGA.pageview(getLocation());
@@ -38,13 +51,4 @@ export function sendPageview() {
     category: "User",
     action: "Move to " + getLocation(),
   });
-}
-
-export function setDatalayer(data = {}) {
-  window.dataLayer.push(data);
-  TagManager.dataLayer(tagManagerArgs);
-}
-
-export function sendEvent(payload) {
-  ReactGA.event(payload);
 }
