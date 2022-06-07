@@ -8,9 +8,6 @@ const Metrics = () => {
   useEffect(() => {
     init();
     setDatalayer();
-  }, []);
-
-  useEffect(() => {
     sendPageview();
     console.log("useLocation:", location);
   }, [location]);
