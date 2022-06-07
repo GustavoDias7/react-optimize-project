@@ -34,6 +34,10 @@ function getLocation() {
 export function sendPageview() {
   ReactGA.set({ page: getLocation() });
   ReactGA.pageview(getLocation());
+  sendEvent({
+    category: "User",
+    action: "Move to " + getLocation(),
+  });
 }
 
 export function setDatalayer(data = {}) {
