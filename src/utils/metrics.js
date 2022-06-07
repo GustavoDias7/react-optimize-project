@@ -10,14 +10,6 @@ const tagManagerArgs = {
   },
 };
 
-export function initGTM() {
-  TagManager.initialize(tagManagerArgs);
-}
-
-export function setGTMDatalayer(data = {}) {
-  TagManager.dataLayer(tagManagerArgs);
-}
-
 const TRACKING_ID = "UA-230277864-1";
 const ReactGAArgs = {
   debug: true,
@@ -27,17 +19,26 @@ const ReactGAArgs = {
   },
 };
 
-export function initGA() {
-  ReactGA.initialize(TRACKING_ID, ReactGAArgs);
+export function init() {
+  if (!window.GA_INITIALIZED) {
+    ReactGA.initialize(TRACKING_ID, ReactGAArgs);
+    TagManager.initialize(tagManagerArgs);
+    window.GA_INITIALIZED = true;
+  }
+}
+
+function getLocation() {
+  return window.location.pathname + window.location.search;
 }
 
 export function sendPageview() {
-  console.log("window.location", window.location);
-  ReactGA.pageview(window.location.pathname + window.location.search);
+  ReactGA.set({ page: getLocation() });
+  ReactGA.pageview(getLocation());
 }
 
-export function setGADatalayer(data = {}) {
+export function setDatalayer(data = {}) {
   window.dataLayer.push(data);
+  TagManager.dataLayer(tagManagerArgs);
 }
 
 export function sendEvent(payload) {
