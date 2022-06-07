@@ -12,7 +12,7 @@ const tagManagerArgs = {
 
 const TRACKING_ID = "UA-230277864-1";
 const ReactGAArgs = {
-  debug: true,
+  debug: false,
   titleCase: false,
   gaOptions: {
     userId: 123,
@@ -20,14 +20,18 @@ const ReactGAArgs = {
 };
 
 export function init() {
-  if (!window.GA_INITIALIZED) {
-    ReactGA.initialize(TRACKING_ID, ReactGAArgs);
-    TagManager.initialize(tagManagerArgs);
-    window.GA_INITIALIZED = true;
-  }
+  ReactGA.initialize(TRACKING_ID, ReactGAArgs);
+  TagManager.initialize(tagManagerArgs);
+  // if (!window.GA_INITIALIZED) {
+  //   window.GA_INITIALIZED = true;
+  // }
 }
 
 function getLocation() {
+  console.log(
+    "window.location:",
+    window.location.pathname + window.location.search
+  );
   return window.location.pathname + window.location.search;
 }
 
