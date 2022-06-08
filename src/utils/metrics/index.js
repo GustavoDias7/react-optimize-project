@@ -50,14 +50,6 @@ export function handleDatalayer() {
   //   pageUrl: getLocation(),
   //   pageTitle: "Page " + getLocation(),
   // });
-  TagManager.dataLayer({
-    event: "gtm.init_consent",
-    gtm: { uniqueEventId: -1 },
-  });
-  TagManager.dataLayer({ event: "gtm.init" });
-  TagManager.dataLayer({ event: "gtm.js" });
-  TagManager.dataLayer({ event: "gtm.dom" });
-  TagManager.dataLayer({ event: "gtm.load" });
 }
 
 export function sendEvent(payload) {
