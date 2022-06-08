@@ -10,6 +10,10 @@ export const tagManagerArgs = {
     userId: 123,
     userProject: "react-metrics-project",
   },
+  events: {
+    event: "gtm.init_consent",
+    gtm: { uniqueEventId: -1 },
+  },
 };
 
 const TRACKING_ID = "UA-230277864-1";
@@ -40,13 +44,17 @@ export function handleDatalayer() {
   //   event: "gtm.js",
   //   test: "testDataLayer"
   // });
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "virtualPageview",
-    pageUrl: getLocation(),
-    pageTitle: "Page " + getLocation(),
-  });
-  TagManager.dataLayer(tagManagerArgs);
+  // window.dataLayer = window.dataLayer || [];
+  // window.dataLayer.push({
+  //   event: "virtualPageview",
+  //   pageUrl: getLocation(),
+  //   pageTitle: "Page " + getLocation(),
+  // });
+  TagManager.dataLayer({ test: "Test", event: "gtm.init_consent" });
+  TagManager.dataLayer({ test: "Test", event: "gtm.init" });
+  TagManager.dataLayer({ test: "Test", event: "gtm.js" });
+  TagManager.dataLayer({ test: "Test", event: "gtm.dom" });
+  TagManager.dataLayer({ test: "Test", event: "gtm.load" });
 }
 
 export function sendEvent(payload) {
