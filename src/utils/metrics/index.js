@@ -26,7 +26,6 @@ const ReactGAArgs = {
 };
 
 export function init() {
-  ReactGA.initialize(TRACKING_ID, ReactGAArgs);
   TagManager.initialize(tagManagerArgs);
 }
 
