@@ -11,7 +11,7 @@ export const tagManagerArgs = {
     userProject: "react-metrics-project",
   },
   events: {
-    event: "gtm.init_consent",
+    event: "test-event",
     gtm: { uniqueEventId: -1 },
   },
 };
